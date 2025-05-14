@@ -1,3 +1,4 @@
+---
 **OracleServer** is a ground‑up Java implementation of the Minecraft 1.8.8 server protocol. It showcases low‑level mastery of networking, packet parsing, world‑tick scheduling, and the full handshake/login/play pipeline—without relying on any existing server forks. Designed for maximum control and performance, OracleServer maintains a stable 20 TPS under load while keeping the codebase clean and modular.
 
 ## Key Features
@@ -43,4 +44,4 @@
     - Join the server
     - Run /pt to display real‑time performance metrics in your tab.
 
-
+---
