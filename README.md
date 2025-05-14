@@ -9,7 +9,7 @@
 - **Modular Design**  
   Clean separation of networking, protocol parsing, world simulation, and plugin interface (future).
 - **Work in Progress**  
-  Core features are stable; combat mechanics and entity handling are actively under development.
+  Core features are stable; api and combat mechanics and entity handling are actively under development.
 
 ## Prerequisites
 
@@ -36,7 +36,8 @@
    - Windows:
       ```
       set PORT=25565
-      java --enable-preview -jar target/Main-0.5.0-BETA.jar```
+      java --enable-preview -jar target/Main-0.5.0-BETA.jar
+      ```
 4. **Connect with Minecraft**
     - Launch Minecraft 1.8.8
     - Add a new server at 0.0.0.0:25565
