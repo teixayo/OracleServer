@@ -1,13 +1,18 @@
 package me.teixayo.server.events;
 
+import lombok.Getter;
 import me.teixayo.server.entity.player.Player;
 import me.teixayo.server.inventory.Inventory;
 
 public class InventoryClickEvent {
 
+    @Getter
     private final Player player;
+    @Getter
     private final Inventory inventory;
+    @Getter
     private final int slot;
+    @Getter
     private boolean cancelled;
 
 
@@ -15,21 +20,5 @@ public class InventoryClickEvent {
         this.player = player;
         this.inventory = inventory;
         this.slot = slot;
-    }
-
-    public boolean isCancelled() {
-        return cancelled;
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public Inventory getInventory() {
-        return inventory;
-    }
-
-    public int getSlot() {
-        return slot;
     }
 }

@@ -3,6 +3,7 @@ package me.teixayo.server.networking;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.*;
+import lombok.Getter;
 import me.teixayo.server.protocol.packet.PacketListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,6 +17,7 @@ public class NettyHandler {
     private static final Logger LOGGER = LogManager.getLogger("core");
     private static final WriteBufferWaterMark SERVER_WRITE_MARK = new WriteBufferWaterMark(1 << 20,
             1 << 21);
+    @Getter
     private final List<PacketListener> listenerList = new ArrayList<>();
     public int threads = Runtime.getRuntime().availableProcessors();
     private EventLoopGroup workerGroup;
@@ -62,7 +64,4 @@ public class NettyHandler {
         listenerList.add(listener);
     }
 
-    public List<PacketListener> getListenerList() {
-        return listenerList;
-    }
 }

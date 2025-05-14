@@ -73,7 +73,7 @@ public class EventManager {
 
         for (EventMethod eventMethod : eventMethods) {
             try {
-                eventMethod.method().invoke(eventMethod.owner(), object);
+                eventMethod.getMethod().invoke(eventMethod.getOwner(), object);
             } catch (Exception e) {
                 e.printStackTrace();
             }

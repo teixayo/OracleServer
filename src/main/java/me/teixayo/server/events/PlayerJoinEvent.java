@@ -1,12 +1,14 @@
 package me.teixayo.server.events;
 
 import lombok.Getter;
+import lombok.Setter;
 import me.teixayo.server.entity.player.Player;
 
 @Getter
 public class PlayerJoinEvent {
 
     private static PlayerJoinEvent instance = null;
+    @Setter
     private Player player;
 
     private PlayerJoinEvent(Player player) {
@@ -21,7 +23,4 @@ public class PlayerJoinEvent {
         return instance;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
 }

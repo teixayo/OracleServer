@@ -1,13 +1,18 @@
 package me.teixayo.server.chunk;
 
+import lombok.Getter;
 import me.teixayo.server.memory.MemoryManagement;
 import me.teixayo.server.memory.Pointer;
 
 public class Chunk {
 
+    @Getter
     private final int chunkX;
+    @Getter
     private final int chunkY;
+    @Getter
     private ChunkSection[] sections;
+    @Getter
     private Pointer biomeIndex;
 
 
@@ -19,19 +24,6 @@ public class Chunk {
     public void initialize() {
         this.sections = new ChunkSection[16];
         this.biomeIndex = MemoryManagement.createNewPointer(256);
-    }
-
-
-    public int getChunkX() {
-        return chunkX;
-    }
-
-    public int getChunkY() {
-        return chunkY;
-    }
-
-    public ChunkSection[] getSections() {
-        return sections;
     }
 
     public void free() {
@@ -60,9 +52,5 @@ public class Chunk {
         }
 
         section.setBlock(x & 0xf, y & 0xf, z & 0xf, id, data);
-    }
-
-    public Pointer getBiomeIndex() {
-        return biomeIndex;
     }
 }

@@ -23,33 +23,22 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.LockSupport;
 import java.util.function.LongSupplier;
 
+@Getter
 public class Server implements Runnable {
 
-    private static final long SLEEP_MS = 50_000_000L;
-    public static LongSupplier a = System::nanoTime;
     private static Server INSTANCE;
-    @Getter
     private final SchedulerManager schedulerManager;
-    @Getter
     private final EventManager eventManager;
-    @Getter
     private final NettyHandler nettyHandler;
-    @Getter
     private final CommandManager commandManager;
     private final ConcurrentHashMap<UUID, Player> players;
-    @Getter
     private final World defaultWorld = new World();
-    @Getter
     private final Logger logger;
     private final long startTime = System.nanoTime();
-    @Getter
     private long ELAPSED_TICKS = 0;
     private boolean isRunning;
-    @Getter
     private double currentTPS;
-    @Getter
     private double currentMSPT;
-    @Getter
     private double cpuUsage;
     private long totalTime;
     private long tick = 0;
@@ -99,14 +88,6 @@ public class Server implements Runnable {
 
     public static Server get() {
         return INSTANCE;
-    }
-
-    public static long getMonotonicMillis() {
-        return getMonotonicNanos() / 1000000L;
-    }
-
-    public static long getMonotonicNanos() {
-        return a.getAsLong();
     }
 
     public Collection<Player> getPlayers() {
@@ -187,8 +168,8 @@ public class Server implements Runnable {
     }
 
     public void stop() {
-        MemoryManagement.freeAll();
         isRunning = false;
+        MemoryManagement.freeAll();
     }
 
 

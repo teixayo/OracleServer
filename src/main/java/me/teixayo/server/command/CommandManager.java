@@ -1,9 +1,12 @@
 package me.teixayo.server.command;
 
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.List;
 
 public class CommandManager {
+    @Getter
     private final HashMap<String, Command> commandMap;
 
     public CommandManager() {
@@ -30,10 +33,6 @@ public class CommandManager {
 
     public void unregister(String command) {
         commandMap.remove(command.toLowerCase());
-    }
-
-    public HashMap<String, Command> getCommandMap() {
-        return commandMap;
     }
 
     public Command getCommand(String command) {

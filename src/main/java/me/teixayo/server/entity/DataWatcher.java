@@ -1,5 +1,6 @@
 package me.teixayo.server.entity;
 
+import lombok.Getter;
 import me.teixayo.server.chunk.Position;
 import me.teixayo.server.item.ItemStack;
 
@@ -20,6 +21,7 @@ public class DataWatcher {
         classToId.put(Position.class, 6);
     }
 
+    @Getter
     private final HashMap<Integer, WatchableObject> data;
 
     public DataWatcher() {
@@ -32,7 +34,4 @@ public class DataWatcher {
         data.put(index, watchableObject);
     }
 
-    public HashMap<Integer, WatchableObject> getData() {
-        return data;
-    }
 }

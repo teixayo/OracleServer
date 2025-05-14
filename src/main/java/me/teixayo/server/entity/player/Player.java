@@ -32,6 +32,7 @@ public class Player extends Entity {
     private float health = 20;
     private int food = 20;
     private float foodSaturation = 0.0F;
+    @Setter
     @Getter
     private boolean onGround;
     @Getter
@@ -206,7 +207,4 @@ public class Player extends Entity {
         return uuid;
     }
 
-    public void setOnGround(boolean onGround) {
-        this.onGround = onGround;
-    }
 }

@@ -1,11 +1,17 @@
 package me.teixayo.server.events;
 
+import lombok.Getter;
+import lombok.Setter;
 import me.teixayo.server.entity.player.Player;
 
 public class PlayerChatEvent {
 
+    @Getter
     private final Player player;
+    @Getter
     private final String message;
+    @Getter
+    @Setter
     private boolean cancelled;
 
     public PlayerChatEvent(Player player, String message) {
@@ -13,19 +19,4 @@ public class PlayerChatEvent {
         this.message = message;
     }
 
-    public boolean isCancelled() {
-        return cancelled;
-    }
-
-    public void setCancelled(boolean cancelled) {
-        this.cancelled = cancelled;
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public String getMessage() {
-        return message;
-    }
 }

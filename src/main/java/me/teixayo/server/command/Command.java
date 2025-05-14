@@ -1,12 +1,21 @@
 package me.teixayo.server.command;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 public abstract class Command {
 
+    @Getter
     private final String name;
+    @Getter
     private List<String> aliases;
+    @Setter
+    @Getter
     private CommandExecutor commandExecuter;
+    @Setter
+    @Getter
     private TabCompleter tabCompleter;
 
     public Command(String name, String... aliases) {
@@ -15,27 +24,4 @@ public abstract class Command {
         this.aliases = List.of(aliases);
     }
 
-    public CommandExecutor getCommandExecuter() {
-        return commandExecuter;
-    }
-
-    public void setCommandExecuter(CommandExecutor commandExecuter) {
-        this.commandExecuter = commandExecuter;
-    }
-
-    public List<String> getAliases() {
-        return aliases;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public TabCompleter getTabCompleter() {
-        return tabCompleter;
-    }
-
-    public void setTabCompleter(TabCompleter tabCompleter) {
-        this.tabCompleter = tabCompleter;
-    }
 }
