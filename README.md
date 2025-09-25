@@ -34,7 +34,7 @@
       PORT=25565 java --enable-preview -jar target/Main-0.5.0-BETA.jar
       ```
    - Windows:
-      ```
+      ```bash
       set PORT=25565
       java --enable-preview -jar target/Main-0.5.0-BETA.jar
       ```
