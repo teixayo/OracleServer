@@ -23,7 +23,8 @@
 1. **Clone the repository**  
    ```bash
    git clone https://github.com/teixayo/OracleServer.git
-   cd OracleServer```
+   cd OracleServer
+   ```
 2. **Build the server**
    ```bash
    mvn clean package
